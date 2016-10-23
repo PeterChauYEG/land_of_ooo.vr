@@ -1,0 +1,22 @@
+{
+  "name": "land_of_oo",
+  "version": "0.1.0",
+  "private": true,
+  "devDependencies": {
+    "enzyme": "^2.5.1",
+    "react-addons-test-utils": "^15.3.2",
+    "react-scripts": "0.7.0"
+  },
+  "dependencies": {
+    "aframe": "^0.3.2",
+    "aframe-react": "^3.3.0",
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom --coverage",
+    "eject": "react-scripts eject"
+  }
+}
