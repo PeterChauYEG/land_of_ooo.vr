@@ -19,12 +19,19 @@ class VRScene extends React.Component {
           material={{shader: 'flat', src: "#background"}}
           rotation="0 90 0"
           scale="1 1 -1" />
-        <Jake src="#Jake"/>
         <Entity
           geometry={{primitive: 'plane'}}
           material={{transparent: true, src: "#Finn"}}
-          position="1 1 -3"
-          scale="1.75 2 1" />
+          position="0 1 -1"
+          rotation="0 0 0"
+          scale="1 1 1" />
+        <Jake src="#Jake"/>
+        <Entity
+          geometry={{primitive: 'plane'}}
+          material={{transparent: true, src: "#Treehouse"}}
+          position="75 10 -10"
+          rotation="0 -90 0"
+          scale="75 75 75" />
       </Scene>
     );
   }
