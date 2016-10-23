@@ -5,21 +5,60 @@ import React from 'react';
 class VRScene extends React.Component {
   constructor() {
     super();
-    this._speak = this._speak.bind(this);
+    
+    this._handleJake = this._handleJake.bind(this);
+    this._renderDuplicateJake = this._renderDuplicateJake.bind(this);
+    
+    this.state = {
+      duplicateJake: false,
+    };
   }
   
-  _speak () {
-    console.log("Hi");
+  _handleJake() {
+    this.setState({
+      duplicateJake: !this.state.duplicateJake,
+    });
   }
-  render () {
+  
+  _renderDuplicateJake(duplicateJake) {
+    return duplicateJake ? (
+      <Entity
+        geometry={{primitive: 'plane'}}
+        material={{transparent: true, src: "url(images/jake.svg)"}}
+        position="3 1 -2" 
+        scale="1 1 1" />
+    )
+      : 
+    "";
+  }
+  
+  render() {
+    const { duplicateJake } = this.state;
+    
     return (
       <Scene>
         <Entity>
-          <Entity camera="user-height: 1.6;" look-controls="" wasd-controls="">
-            <a-cursor
-              animation__click="property: scale; startEvents: click; from: 0.1 0.1 0.1; to: 1 1 1; dur: 150"
-            >
-        </a-cursor>
+          <Entity 
+            camera="user-height: 1.6;" 
+            look-controls="" 
+            wasd-controls="">
+            <a-entity 
+              cursor="fuse: true; fuseTimeout: 500;"
+              position="0 0 -1"
+              scale="0.02 0.02 1"
+              geometry="primitive: ring;"
+              material="color: black; shader: flat">
+              <a-animation 
+                begin="cursor-hovering" 
+                attribute="position"
+                from="0 0 -1"
+                to="0 0 -0.5"
+                fill="forwards"
+                dur="1000"
+                direction="alternate"
+                repeat="1">
+              </a-animation>
+            </a-entity>
           </Entity>
         </Entity>
         <Entity
@@ -31,13 +70,14 @@ class VRScene extends React.Component {
           geometry={{primitive: 'plane'}}
           material={{transparent: true, src: "url(images/jake.svg)"}}
           position="2 1 -2" 
-          scale="1 1 1" />
+          scale="1 1 1" 
+          onClick={this._handleJake} />
+        {this._renderDuplicateJake(duplicateJake)}
         <Entity
           geometry={{primitive: 'plane'}}
           material={{transparent: true, src: "url(images/finn.svg)"}}
-          position="0 1 -3" 
-          scale="2 2 1"
-          onClick={this._speak} />
+          position="1 1 -3" 
+          scale="1.75 2 1" />
       </Scene>
     );
   }
