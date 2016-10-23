@@ -3,36 +3,15 @@ import {Entity, Scene} from 'aframe-react';
 import React from 'react';
 
 // import components
+import Camera from './Camera';
 import Jake from './Jake';
 
 class VRScene extends React.Component {
   render() {
     return (
       <Scene>
-        <Entity>
-          <Entity 
-            camera="user-height: 1.6;" 
-            look-controls="" 
-            wasd-controls="">
-            <a-entity 
-              cursor="fuse: true; fuseTimeout: 500;"
-              position="0 0 -1"
-              scale="0.02 0.02 1"
-              geometry="primitive: ring;"
-              material="color: black; shader: flat">
-              <a-animation 
-                begin="cursor-hovering" 
-                attribute="position"
-                from="0 0 -1"
-                to="0 0 -0.5"
-                fill="forwards"
-                dur="500"
-                direction="alternate"
-                repeat="1">
-              </a-animation>
-            </a-entity>
-          </Entity>
-        </Entity>
+        <Camera />
+        <Entity light="type: ambient; color: #fff; intensity: 1.25;"></Entity>
         <Entity
           geometry={{primitive: 'sphere', radius: 100}}
           material={{shader: 'flat', src: "url(images/background.png)"}}
