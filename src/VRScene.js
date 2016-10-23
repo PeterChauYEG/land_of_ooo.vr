@@ -6,6 +6,14 @@ class VRScene extends React.Component {
   render () {
     return (
       <Scene>
+  <Entity>
+    <Entity camera="user-height: 1.6;" look-controls="" wasd-controls="">
+      <a-cursor
+        animation__click="property: scale; startEvents: click; from: 0.1 0.1 0.1; to: 1 1 1; dur: 150"
+      >
+  </a-cursor>
+    </Entity>
+  </Entity>
         <Entity
           geometry={{primitive: 'sphere', radius: 100}}
           material={{shader: 'flat', src: "url(images/background.png)"}}
