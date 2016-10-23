@@ -2,39 +2,11 @@ import 'aframe';
 import {Entity, Scene} from 'aframe-react';
 import React from 'react';
 
+// import components
+import Jake from './Jake';
+
 class VRScene extends React.Component {
-  constructor() {
-    super();
-    
-    this._handleJake = this._handleJake.bind(this);
-    this._renderDuplicateJake = this._renderDuplicateJake.bind(this);
-    
-    this.state = {
-      duplicateJake: false,
-    };
-  }
-  
-  _handleJake() {
-    this.setState({
-      duplicateJake: !this.state.duplicateJake,
-    });
-  }
-  
-  _renderDuplicateJake(duplicateJake) {
-    return duplicateJake ? (
-      <Entity
-        geometry={{primitive: 'plane'}}
-        material={{transparent: true, src: "url(images/jake.svg)"}}
-        position="3 1 -2" 
-        scale="1 1 1" />
-    )
-      : 
-    "";
-  }
-  
   render() {
-    const { duplicateJake } = this.state;
-    
     return (
       <Scene>
         <Entity>
@@ -54,7 +26,7 @@ class VRScene extends React.Component {
                 from="0 0 -1"
                 to="0 0 -0.5"
                 fill="forwards"
-                dur="1000"
+                dur="500"
                 direction="alternate"
                 repeat="1">
               </a-animation>
@@ -66,13 +38,7 @@ class VRScene extends React.Component {
           material={{shader: 'flat', src: "url(images/background.png)"}}
           scale="1 1 -1"
           rotation="0 90 0" />
-        <Entity
-          geometry={{primitive: 'plane'}}
-          material={{transparent: true, src: "url(images/jake.svg)"}}
-          position="2 1 -2" 
-          scale="1 1 1" 
-          onClick={this._handleJake} />
-        {this._renderDuplicateJake(duplicateJake)}
+        <Jake />
         <Entity
           geometry={{primitive: 'plane'}}
           material={{transparent: true, src: "url(images/finn.svg)"}}
