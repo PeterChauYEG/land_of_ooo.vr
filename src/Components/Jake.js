@@ -27,7 +27,7 @@ class Jake extends React.Component {
         geometry={{primitive: 'plane'}}
         material={{transparent: true, src}}
         onClick={this._handleClick}
-        position="5 0.5 -3"
+        position="5 0.4 -3"
         rotation="0 -80 0"
         scale="0.5 0.5 0.5" />
     )
