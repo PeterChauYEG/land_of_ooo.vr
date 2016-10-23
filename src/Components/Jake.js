@@ -27,8 +27,8 @@ class Jake extends React.Component {
         geometry={{primitive: 'plane'}}
         material={{transparent: true, src}}
         onClick={this._handleClick}
-        position="5 0.4 -3"
-        rotation="0 -80 0"
+        position="4.5 0.5 -3"
+        rotation="0 -90 0"
         scale="0.5 0.5 0.5" />
     )
       :
@@ -47,7 +47,7 @@ class Jake extends React.Component {
           material={{transparent: true, src}}
           onClick={this._handleClick}
           position="2 0 -2"
-          rotation="0 -45 0"
+          rotation="0 -90 0"
           scale="1 1 1"
           width="1" />
         {this._renderDuplicate(duplicate)}

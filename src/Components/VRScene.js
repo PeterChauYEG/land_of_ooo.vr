@@ -21,9 +21,15 @@ class VRScene extends React.Component {
           scale="1 1 -1" />
         <Entity
           geometry={{primitive: 'plane'}}
-          material={{transparent: true, src: "#Finn"}}
-          position="0 1 -1"
+          material={{transparent: true, src: "#Logo"}}
+          position="0 3 -4"
           rotation="0 0 0"
+          scale="4 4 1" />
+        <Entity
+          geometry={{primitive: 'plane'}}
+          material={{transparent: true, src: "#Finn"}}
+          position="-1 1 -1"
+          rotation="0 90 0"
           scale="1 1 1" />
         <Jake src="#Jake"/>
         <Entity
@@ -31,7 +37,7 @@ class VRScene extends React.Component {
           material={{transparent: true, src: "#Treehouse"}}
           position="75 10 -10"
           rotation="0 -90 0"
-          scale="75 75 75" />
+          scale="75 75 1" />
       </Scene>
     );
   }
