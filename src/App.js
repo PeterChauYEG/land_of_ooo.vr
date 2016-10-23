@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 // import components
-import VRScene from './VRScene';
+import VRScene from './Components/VRScene';
 
 // import css
 import './App.css';
