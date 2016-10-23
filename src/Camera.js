@@ -11,28 +11,28 @@ class Camera extends React.Component {
         wasd-controls="">
         <a-entity 
           cursor="fuse: true; fuseTimeout: 1000;"
-          position="0 0 -1"
-          scale="0.02 0.02 1"
           geometry="primitive: ring;"
-          material="color: black; shader: flat">
+          material="color: black; shader: flat"
+          position="0 0 -1"
+          scale="0.02 0.02 1">
           <a-animation 
-            begin="mouseenter" 
             attribute="position"
-            from="0 0 -1"
-            to="0 0 -0.5"
-            fill="forwards"
-            dur="250"
+            begin="mouseenter" 
             direction="alternate"
-            repeat="1">
+            dur="250"
+            fill="forwards"
+            from="0 0 -1"
+            repeat="1"
+            to="0 0 -0.5">
           </a-animation>
           <a-animation 
-            begin="click" 
             attribute="material.color"
-            from="black"
-            to="red"
+            begin="click"
             direction="alternate"
             dur="250"
-            repeat="1">
+            from="black"
+            repeat="1"            
+            to="red">
           </a-animation>          
         </a-entity>
       </Entity>

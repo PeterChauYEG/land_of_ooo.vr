@@ -21,29 +21,33 @@ class Jake extends React.Component {
   }
   
   _renderDuplicate(exists) {
+    const { src } = this.props;
     return exists ? (
       <Entity
         geometry={{primitive: 'plane'}}
-        material={{transparent: true, src: "url(images/jake.svg)"}}
+        material={{transparent: true, src}}
+        onClick={this._handleClick} 
         position="3 1 -2" 
-        scale="1 1 1" 
-        onClick={this._handleClick} />
+        scale="1 1 1" />
     )
       : 
     "";
   }
   
   render() {
+    const { src } = this.props;
     const { duplicate } = this.state;
-    
     return (
       <Entity>
         <Entity
+          depth="1"
           geometry={{primitive: 'plane'}}
-          material={{transparent: true, src: "url(images/jake.svg)"}}
+          height="1"
+          material={{transparent: true, src}}
+          onClick={this._handleClick}
           position="2 1 -2" 
           scale="1 1 1" 
-          onClick={this._handleClick} />
+          width="1" />
         {this._renderDuplicate(duplicate)}
       </Entity>
     );
