@@ -22,24 +22,26 @@ class VRScene extends React.Component {
         <Entity
           geometry={{primitive: 'plane'}}
           material={{transparent: true, src: "#Logo"}}
-          position="0 3 -4"
+          position="0 5 -10"
           rotation="0 0 0"
-          scale="4 4 1" />
+          scale="10 10 1" />
         <Entity
           geometry={{primitive: 'plane'}}
           material={{transparent: true, src: "#Finn"}}
-          position="-1 1 -1"
-          rotation="0 90 0"
+          position="-1 1 -3"
+          rotation="0 45 0"
           scale="1 1 1" />
         <JakeTeleport
-          from="2 0 -2"
+          from="1 1 -3"
+          rotateFrom="0 -45 0"
+          rotateTo="0 -90 0"
           src="#Jake"
-          to="4.5 0.5 -3" />
+          to="6 0.5 0.50" />
         <Entity
           geometry={{primitive: 'plane'}}
           material={{transparent: true, src: "#Treehouse"}}
-          position="75 10 -10"
-          rotation="0 -90 0"
+          position="55.53 17.04 42.86"
+          rotation="0 -124.26 0"
           scale="75 75 1" />
       </Scene>
     );

@@ -22,23 +22,23 @@ class JakeTeleport extends React.Component {
   render() {
     const {
       from,
+      rotateFrom,
+      rotateTo,
       src,
       to,
     } = this.props;
     const { teleport } = this.state;
     return (
-      <Entity>
-        <Entity
-          depth="1"
-          geometry={{primitive: 'plane'}}
-          height="1"
-          material={{transparent: true, src}}
-          onClick={this._handleClick}
-          position={teleport ? to : from}
-          rotation="0 -90 0"
-          scale="1 1 1"
-          width="1" />
-      </Entity>
+      <Entity
+        depth="1"
+        geometry={{primitive: 'plane'}}
+        height="1"
+        material={{transparent: true, src}}
+        onClick={this._handleClick}
+        position={teleport ? to : from}
+        rotation={teleport ? rotateTo : rotateFrom}
+        scale="0.75 0.75 1"
+        width="1" />
     );
   }
 }
