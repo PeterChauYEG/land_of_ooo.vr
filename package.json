@@ -2,6 +2,7 @@
   "name": "land_of_ooo",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://land_of_ooo.labone.tech",
   "devDependencies": {
     "enzyme": "^2.5.1",
     "react-addons-test-utils": "^15.3.2",
