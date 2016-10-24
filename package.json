@@ -1,5 +1,5 @@
 {
-  "name": "land_of_oo",
+  "name": "land_of_ooo",
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
@@ -17,6 +17,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom --coverage",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy": "surge build/ http://land_of_ooo.labone.tech"
   }
 }
