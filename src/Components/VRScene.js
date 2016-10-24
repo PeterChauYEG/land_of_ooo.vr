@@ -5,7 +5,7 @@ import React from 'react';
 // import components
 import Assets from './Assets';
 import Camera from './Camera';
-import Jake from './Jake';
+import JakeTeleport from './JakeTeleport';
 
 class VRScene extends React.Component {
   render() {
@@ -31,7 +31,10 @@ class VRScene extends React.Component {
           position="-1 1 -1"
           rotation="0 90 0"
           scale="1 1 1" />
-        <Jake src="#Jake"/>
+        <JakeTeleport
+          from="2 0 -2"
+          src="#Jake"
+          to="4.5 0.5 -3" />
         <Entity
           geometry={{primitive: 'plane'}}
           material={{transparent: true, src: "#Treehouse"}}
